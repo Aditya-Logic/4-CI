@@ -43,5 +43,5 @@ jobs:
         echo "## Line Plot" >> report.md
         echo '![Line Plot](./lines.png)' >> report.md
 
-        cml comment create --publish=false report.md
+        cml comment create report.md
 
