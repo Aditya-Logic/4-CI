@@ -42,7 +42,7 @@ jobs:
         echo "## Bar plots" >> report.md
         echo "![](./bars.png "Bar plot")" >> report.md
         echo "## Line Plots" >> report.md
-        echo "![](./lines.png)  "Bar plot" >> report.md
+        echo "![](./lines.png "Bar plot")" >> report.md
 
         # Post the report as a comment on the PR/Commit
         cml comment create report.md
