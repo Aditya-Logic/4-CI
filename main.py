@@ -1,27 +1,50 @@
+
 import matplotlib.pyplot as plt
 
-fig,ax=plt.subplots()
+# ---------------- BAR PLOT ----------------
 
-fruits=["apples","blueberry","cherry","orange"]
-count=[40,65,24,77]
-bar_labels=["red","blue","_red","ornage"]
-bar_color=["tab:red","tab:blue","tab:red","tab:orange"]
+fig, ax = plt.subplots()
 
-ax.bar(fruits,count,label=bar_labels,color=bar_color)
+fruits = ["apples", "blueberry", "cherry", "orange"]
+count = [40, 65, 24, 77]
 
-ax.set_ylabel('fruit supply')
-ax.set_title('fruit supply by kind and color')
-ax.legend(title='fruit color')
+bar_labels = ["red", "blue", "_red", "orange"]
+bar_colors = ["tab:red", "tab:blue", "tab:red", "tab:orange"]
 
-plt.savefig("bars.png",bbox_inches="tight")
+ax.bar(
+    fruits,
+    count,
+    label=bar_labels,
+    color=bar_colors
+)
 
-cat=["bored","happy","happy","bored","happy"]
-dog=["happy","bored","bored","happy","bored"]
-activities=["combing","drinking","feeding","napping","playing"]
+ax.set_ylabel("Fruit supply")
+ax.set_title("Fruit supply by kind and color")
+ax.legend(title="Fruit color")
 
-fig,ax=plt.subplot()
-ax.plot(activities,dog,label="dog")
-ax.plot(activities,cat,label="cat")
+plt.savefig("bars.png", bbox_inches="tight")
+plt.close()
+
+
+# ---------------- LINE PLOT ----------------
+
+cat = ["bored", "happy", "happy", "bored", "happy"]
+dog = ["happy", "bored", "bored", "happy", "bored"]
+
+activities = [
+    "combing",
+    "drinking",
+    "feeding",
+    "napping",
+    "playing"
+]
+
+fig, ax = plt.subplots()
+
+ax.plot(activities, dog, label="dog")
+ax.plot(activities, cat, label="cat")
 
 ax.legend()
-plt.savefig('lines.png',bbox_inches="tight")
+
+plt.savefig("lines.png", bbox_inches="tight")
+plt.close()
