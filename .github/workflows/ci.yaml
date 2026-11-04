@@ -37,13 +37,11 @@ jobs:
       env:
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # Build the Markdown report
         echo "# Model Training Report" > report.md
         echo "## Bar Plots" >> report.md
-        echo '![Bar Plot](./bars.png)' >> report.md
+        echo "Bar plot generated successfully." >> report.md
         echo "## Line Plots" >> report.md
-        echo '![Line Plot](./lines.png)' >> report.md
+        echo "Line plot generated successfully." >> report.md
 
-        # Post the report as a comment on the PR/Commit
-        cml comment create report.md
+        cml comment create --publish=false report.md
 
