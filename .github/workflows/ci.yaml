@@ -38,10 +38,10 @@ jobs:
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "# Model Training Report" > report.md
-        echo "## Bar Plots" >> report.md
-        echo "Bar plot generated successfully." >> report.md
-        echo "## Line Plots" >> report.md
-        echo "Line plot generated successfully." >> report.md
+        echo "## Bar Plot" >> report.md
+        echo '![Bar Plot](./bars.png)' >> report.md
+        echo "## Line Plot" >> report.md
+        echo '![Line Plot](./lines.png)' >> report.md
 
         cml comment create --publish=false report.md
 
