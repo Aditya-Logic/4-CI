@@ -36,6 +36,7 @@ jobs:
     - name: Create and publish CML report
       env:
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        CML_COMMENT_PUBLISH_URL: ${{ secrets.CML_COMMENT_PUBLISH_URL }}
       run: |
         # Build the Markdown report
         echo "# Model Training Report" > report.md
