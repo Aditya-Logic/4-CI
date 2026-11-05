@@ -36,14 +36,13 @@ jobs:
     - name: Create and publish CML report
       env:
         REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        CML_COMMENT_PUBLISH_URL: ${{ secrets.CML_COMMENT_PUBLISH_URL }}
       run: |
         # Build the Markdown report
         echo "# Model Training Report" > report.md
         echo "## Bar plots" >> report.md
-        echo "![](./bars.png "Bar plot")" >> report.md
+        echo '![Bar Plot](./bars.png)' >> report.md
         echo "## Line Plots" >> report.md
-        echo "![](./lines.png "Bar plot")" >> report.md
+        echo '![Line Plot](./lines.png)' >> report.md
 
         # Post the report as a comment on the PR/Commit
         cml comment create report.md
