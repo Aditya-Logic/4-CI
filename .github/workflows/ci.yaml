@@ -45,5 +45,5 @@ jobs:
         echo '![Line Plot](./lines.png)' >> report.md
 
         # Post the report as a comment on the PR/Commit
-        cml comment create report.md
+        cml comment create --publish=false report.md
 
